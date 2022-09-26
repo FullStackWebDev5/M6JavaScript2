@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Promise Chaining</title>
+	<script>
+		/* ------------------------------------------------
+			promise1.then(() => {
+				return 'Akash '
+			}).then((resolvedMessage) => {
+				return resolvedMessage + 'Sinha'
+			}).then((resolvedMessage) => {
+				console.log(resolvedMessage + ' is a good student')
+			}).catch(() => {
+				console.log('Rejection')
+			})
+
+		------------------------------------------------ */
+
+		// Function which is returning a promise
+		const studentDataFetched = () => new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve('Step 1: Students data fetched successfully')
+			}, 5000)
+		}) 
+
+		const studentDataProcessed = () => new Promise ((resolve, reject) => {
+			setTimeout(() => {
+				resolve('Step 2: Students data processed successfully')
+			}, 3000)
+		})
+
+		const studentResultsMailed = () => new Promise ((resolve, reject) => {
+			setTimeout(() => {
+				resolve('Step 3: Students results mailed successfully')
+			}, 8000)
+		})
+
+		studentDataFetched().then((resolvedMessage) => {
+			console.log(resolvedMessage)
+			return studentDataProcessed()
+		}).then((resolvedMessage) => {
+			console.log(resolvedMessage)
+			return studentResultsMailed()
+		}).then((resolvedMessage) => {
+			console.log(resolvedMessage)
+		}).catch((rejectedMessage) => {
+			console.log(rejectedMessage)
+		})
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

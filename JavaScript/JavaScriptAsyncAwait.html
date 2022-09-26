@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Async Await</title>
+	<script>
+		// ASYNC - Attach this keyword to any function - To make it asynchronous/ Handle asynchronous code
+		// AWAIT 
+		// - Waits for resolved state of promise (Returns resolved value of promise)
+		// - await should always be used inside async function
+
+		/* ------------------------------ */
+		// async function abc() {}
+		// const abc = async function () {}
+		// const abc = async () => {}
+		/* ------------------------------ */
+
+		// async function abc() {
+		// 	return 5
+		// }
+		// console.log(abc())
+
+		/* ------------------------------ */
+		// let promise = new Promise((resolve, reject) => {
+		// 	setTimeout(() => {
+		// 		reject('Promise 1 rejected!')
+		// 	}, 4000)
+		// })
+
+		// promise.then((resolvedMessage) => {
+		// 	console.log('[RESOLVED] '+ resolvedMessage)
+		// }).catch((rejectedMessage) => {
+		// 	console.log('[REJECTED] '+ rejectedMessage)
+		// })
+
+		// EQUIVALENT REPRESENTATION HANDLING PROMISES USING ASYNC-AWAIT
+		// const handlePromise = async () => {
+		// 	try {
+		// 		const resolvedMessage = await promise
+		// 		console.log('[RESOLVED] '+ resolvedMessage)
+		// 	} catch (rejectedMessage) {
+		// 		console.log('[REJECTED] '+ rejectedMessage)
+		// 	}
+		// }
+		// handlePromise()
+
+		const studentDataFetched = () => new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve('[200] Students data fetched successfully')
+			}, 5000)
+		}) 
+
+		const studentDataProcessed = () => new Promise ((resolve, reject) => {
+			setTimeout(() => {
+				resolve('[200] Students data processed successfully')
+			}, 3000)
+		})
+
+		const studentResultsMailed = () => new Promise ((resolve, reject) => {
+			setTimeout(() => {
+				resolve('[200] Students results mailed successfully')
+			}, 8000)
+		})
+
+		const handleStudentsData = async () => {
+			try {
+				console.log('Fetching students data ...')
+				const result1 = await studentDataFetched()
+				console.log(result1)
+				console.log('Processing students data ...')
+				const result2 = await studentDataProcessed()
+				console.log(result2)
+				console.log('Mailing results to students ...')
+				const result3 = await studentResultsMailed()
+				console.log(result3)
+			} catch (err) {
+				console.log(err)
+			}
+		}
+		handleStudentsData()
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

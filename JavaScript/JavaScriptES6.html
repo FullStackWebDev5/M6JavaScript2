@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS ES6 Syntax</title>
+	<script>
+		// ES6 - Ecma Script 6 (2015)
+		// Lots of syntactic sugar introduced
+
+		/* 
+			---------------------------------------------------------------------------------------------------
+			1. Template Strings
+			- Should start and end with backtick (`)
+			- To use variables: ${}
+		*/
+
+		// let amir = {
+		// 	firstName: 'Mohd',
+		// 	lastName: 'Amir',
+		// 	city: 'Mumbai',
+		// 	state: 'Maharashtra',
+		// 	country: 'India'
+		// }
+
+		// console.log('My name is ' + amir.firstName + ' ' + amir.lastName + ". I'm from " + amir.city + ', ' + amir.state + ', ' + amir.country + '.')
+
+		// console.log(`My name is ${amir.firstName} ${amir.lastName}. I'm from ${amir.city}, ${amir.state}, ${amir.country}.`)
+
+		/* 
+			---------------------------------------------------------------------------------------------------
+			2. let, const
+			- var: global
+			- let: block
+			- const: block + constant
+		*/
+
+		/* 
+			---------------------------------------------------------------------------------------------------
+			3. Arrow function
+			- Syntactic sugar of anonymous function
+			- Syntax: () => {}
+		*/
+
+		// function abc () {
+		// 	console.log('abc')
+		// }
+
+		// const abc = function () {
+		// 	console.log('abc')
+		// }
+
+		// const abc = () => {
+		// 	console.log('abc')
+		// }
+		// abc()
+
+		// const sum = (num1, num2) => {
+		// 	return num1 + num2
+		// }
+
+		// When there is only one expression to be executed/returned, you can skip {} and return keyword as well.
+
+		// const sum = (num1, num2) => num1 + num2
+
+		// console.log(sum(3, 5))
+
+		/* 
+			---------------------------------------------------------------------------------------------------
+			4. Default Parameters
+		*/
+
+		// function sum(num1 = 0, num2 = 0, num3 = 0) {
+		// 	console.log(num1 + num2 + num3)
+		// }
+		// sum(5, 4)
+
+		// function product(num1 = 1, num2 = 1, num3 = 1) {
+		// 	console.log(num1 * num2 * num3)
+		// }
+		// product(3, 4)
+
+		/* 
+			---------------------------------------------------------------------------------------------------
+			5. Exponential Operator (**)
+		*/
+
+		// console.log(2 ** 3) // 2^3
+
+		/* 
+			---------------------------------------------------------------------------------------------------
+			6. includes()
+			- Arrays and strings
+		*/
+
+		// let x = 'Jeroni'
+		// console.log(x.includes('one'))
+
+		// let x = ['Abhishek', 'Sai', 'Sawant', 'Yogesh']
+		// console.log(x.includes('Lenson'))
+
+		/* 
+			---------------------------------------------------------------------------------------------------
+			7. Spread Operator (... : Populate array/object entries)
+			- Arrays and Objects
+		*/
+
+		// let arr1 = [4, 2, 7, 3, 1, 10]
+		// let arr2 = [8, 2, 1, 5, 3]
+		// let newArr = [4, 2, 7, 3, 1, 10, 8, 2, 1, 5, 3]
+
+		// let newArr = []
+		// for(let i = 0; i < arr1.length; i++){
+		// 	newArr.push(arr1[i])
+		// }
+		// for(let i = 0; i < arr2.length; i++){
+		// 	newArr.push(arr2[i])
+		// }
+
+		// let newArr = []
+		// for(let element of arr1){
+		// 	newArr.push(element)
+		// }
+		// for(let element of arr2){
+		// 	newArr.push(element)
+		// }
+		// console.log(newArr)
+
+		// let newArr = [...arr1, ...arr2]
+		// console.log(newArr)
+
+		// let obj1 = {
+		// 	a: 5,
+		// 	b: 10
+		// }
+		// let obj2 = {
+		// 	c: 12,
+		// 	d: 25
+		// }
+
+		// let newObj = {}
+		// for(key in obj1) {
+		// 	newObj[key] = obj1[key]
+		// }
+		// for(key in obj2) {
+		// 	newObj[key] = obj2[key]
+		// }
+
+		// let newObj = {
+		// 	...obj1,
+		// 	...obj2
+		// }
+		// console.log(newObj)
+
+		// let newObj = {
+		// 	a: 5,
+		// 	b: 10,
+		// 	c: 12,
+		// 	d: 25
+		// }
+
+		/* 
+			---------------------------------------------------------------------------------------------------
+			8. Object Property Assignment (Key name = Variable name holding value)
+		*/
+
+		// let firstName = 'Zehra'
+		// let lastName = 'Khan'
+
+		// let zehraDetails = {
+		// 	firstName: firstName,
+		// 	lastName: lastName
+		// }
+
+		// let zehraDetails = { firstName, lastName }
+		// console.log(zehraDetails)
+
+		/* 
+			---------------------------------------------------------------------------------------------------
+			9. Destructing (Extracting key as a new variable with the same value)
+		*/
+
+		// let zehraDetails = {
+		// 	firstName: 'Zehra',
+		// 	lastName: 'Khan'
+		// }
+
+		// let firstName = zehraDetails.firstName
+		// let lastName = zehraDetails.lastName
+
+		// let {
+		// 	firstName,
+		// 	lastName
+		// } = zehraDetails
+
+		// console.log(firstName, lastName)
+
+		// console.log(`There is a student - ${firstName} ${lastName} in Module 6. ${firstName} is very good in sports. ${firstName} is continuously practining to upskill herself.`)
+
+		// let obj1 = {
+		// 	a: 5,
+		// 	b: 10
+		// }
+
+		// let { a, b } = obj1
+
+		// console.log(a, b, c)
+
+		/* 
+			---------------------------------------------------------------------------------------------------
+			10. Object.entries(): Returns an array of key-value pairs of objects
+		*/
+
+		// let obj1 = {
+		// 	a: 5,
+		// 	b: 10,
+		// 	c: 15,
+		// 	d: 100
+		// }
+
+		// 1. Object.values(): Returns an array of object values
+		// let arr = Object.values(obj1)
+		// console.log(arr)
+
+		// 2. Object.keys(): Returns an array of object keys
+		// let arr = Object.keys(obj1)
+		// console.log(arr)
+
+		// console.log(Object.entries(obj1))
+
+		/* 
+			---------------------------------------------------------------------------------------------------
+			11. Object.assign(): Cloning (Shallow)
+		*/
+
+		// let x = 5
+		// let y = x
+		// x = 10
+		// console.log(y)
+
+		// let obj1 = {
+		// 	a: 5,
+		// 	b: 10
+		// }
+		// let obj2 = obj1
+		// obj1.a = 100
+		// console.log(obj2)
+		
+		// # Shallow Copy
+		// 1. Spread Operator
+		// let obj1 = {
+		// 	a: 5,
+		// 	b: 10
+		// }
+
+		// let obj2 = {
+		// 	...obj1
+		// }
+
+		// obj1.a = 100
+		// console.log(obj2)
+
+		// 2. Object.assign()
+		// let obj2 = Object.assign({}, obj1)
+		// obj1.a = 100
+		// console.log(obj2)
+
+		// # Deep Copy
+		let priyoDetails = {
+			firstName: 'Priyo',
+			lastName: 'Saha',
+			address: {
+				landMark: 'XYZ Block',
+				postOffice: 'ABC',
+				zipCode: 123456,
+			}
+		}
+
+		// let priyoDetailsCopy = { ...priyoDetails } - Shallow copy won't work for nested objects
+		let priyoDetailsCopy = JSON.parse(JSON.stringify(priyoDetails))
+		priyoDetails.address.postOffice = 'DEF'
+		console.log(priyoDetailsCopy)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

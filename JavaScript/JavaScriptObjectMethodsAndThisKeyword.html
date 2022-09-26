@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Object Methods</title>
+	<script>
+		// Property: A key which is holding value other than function
+		// Method: A key which is holding a function value
+
+		// Functions
+		// function abc () {
+		// 	console.log('abc')
+		// }
+
+		// Anonymous Functions
+		// let abc = function () { // Function Expression
+		// 	console.log('abc')
+		// }
+		// abc()
+
+		// Self-invoking function
+		// (function () {
+		// 	console.log('abc')
+		// })()
+
+		// (function (num1, num2) {
+		// 	console.log(num1 + num2)
+		// })(5, 20)
+
+		// let amir = {
+		// 	firstName: 'Mohd',
+		// 	lastName: 'Amir',
+		// 	sayHi: function () {
+		// 		console.log('Hi')
+		// 	},
+		// 	sayBye: function () {
+		// 		console.log('Bye')
+		// 	}
+		// }
+
+		// Accessing object methods
+		// amir.sayHi()
+		// amir.sayBye()
+
+		// let amir = {
+		// 	firstName: 'Mohd',
+		// 	lastName: 'Amir',
+		// 	sayHi: function (name) {
+		// 		console.log('Hi ' + name + '!')
+		// 	},
+		// 	calculateSum: function (num1, num2) {
+		// 		console.log(num1 + num2)
+		// 	}
+		// }
+
+		// amir.sayHi('Jeroni')
+		// amir.sayHi('Rambali')
+		// amir.calculateSum(20, 30)
+
+		// 'this' keyword -> Refers to the owner of that entity
+
+		let amir = {
+			firstName: 'Mohd',
+			lastName: 'Amir',
+			city: 'Mumbai',
+			state: 'Maharashtra',
+			country: 'India',
+			displayFullName: function () {
+				return this.firstName + ' ' + this.lastName
+			},
+			displayIntroduction: function () {
+				console.log('My name is ' + this.displayFullName() + ". I'm from " + this.city + ', ' + this.state + ', ' + this.country + '.')
+			}
+		}
+
+		// amir.displayIntroduction()
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

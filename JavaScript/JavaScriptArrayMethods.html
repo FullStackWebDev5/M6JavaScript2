@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Array Methods</title>
+	<script>
+		// forEach, filter, map -> Use Callback syntax (Passing a function definition as an argument)
+
+		// const fun1 = function () {
+		// 	console.log('fun1')
+		// }
+
+		// abc(function () {
+		// 	console.log('fun1')
+		// })
+
+		/*
+			.forEach()
+			- Iterate and run the callback for each element
+			- Cannot manipulate any elements inside the callback function for the original array
+			- Does not return any value
+
+			Syntax:
+			arr.forEach(function (element){
+
+			})
+		*/
+
+		// let arr = [2, 1, 10, 67, 82]
+
+		// arr.forEach(function (element){
+		// 	console.log(element)
+		// })
+
+		/*
+			.filter()
+			- Iterate and run the callback for each element
+			- Cannot manipulate any elements inside the callback function for the original array
+			- A condition needs to be returned inside the callback
+			- Filter menthod returns a new array with all filtered elements which satisfy the given condition
+			[Size of returned array need not be same as original array]
+
+			Syntax:
+			arr.filter(function (element){
+				return [condition]
+			})
+		*/
+
+		let arr = [2, 1, 10, 67, 82]
+		let arr2 = arr.filter(function (element){
+			return element % 2 === 0          // arr2 = [2, 10, 82]
+		})
+		console.log(arr2)
+
+		/*
+			.map()
+			- Iterate and run the callback for each element
+			- Cannot manipulate any elements inside the callback function for the original array
+			- Inside the callback function, return updated element for each iteration
+			- Map method returns a new array with all updated elements which were returned for each iteration
+			[Size of returned array is exactly same as original array]
+		*/
+
+		// let arr = [2, 1, 10, 67, 82]
+		
+		// let arr2 = arr.map(function (element) {
+		// 	return element + 1
+		// })
+
+		// console.log(arr2)
+		// console.log(arr)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

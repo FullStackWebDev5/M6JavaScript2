@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Object Constructors</title>
+	<script>
+		// let amir = {
+		// 	firstName: 'Mohd',
+		// 	lastName: 'Amir',
+		// 	city: 'Mumbai',
+		// 	state: 'Maharashtra',
+		// 	country: 'India'
+		// }
+
+		// let potha = {
+		// 	firstName: 'Potha',
+		// 	lastName: 'Kamurinavyasari',
+		// 	city: 'Pune',
+		// 	state: 'Maharashtra',
+		// 	country: 'India'
+		// }
+
+		// Object constructor: Template/Blueprint for objects
+		function Student(firstName, lastName){         //Pascal Case
+			this.firstName = firstName
+			this.lastName = lastName
+			this.country = 'India'
+		}
+
+		let subrahmanyam = new Student('Subrahmanyam', 'Siddireddy')
+		let ramachandra = new Student('Ramachandra', 'Viswanadh')
+		let rambali = new Student('Rambali', 'Lodhi')
+
+		console.log(subrahmanyam)
+		console.log(ramachandra)
+		console.log(rambali)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

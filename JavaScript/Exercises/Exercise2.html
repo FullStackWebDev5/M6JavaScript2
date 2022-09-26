@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exercise 2</title>
+	<script>
+		let students = [
+      {
+        name: 'Vaishnavi',
+        batch: 8,
+        marks: {
+          science: 80,
+          social: 70,
+          hindi: 80,
+          maths: 100,
+          english: 90,
+        }
+      }, {
+        name: 'Abhishek',
+        batch: 10,
+        marks: {
+          science: 75,
+          social: 75,
+          hindi: 62,
+          maths: 81,
+          english: 52,
+        }
+      }, {
+        name: 'Pappu',
+        batch: 10,
+        marks: {
+          science: 70,
+          social: 72,
+          hindi: 75,
+          maths: 95,
+          english: 82,
+        }
+      }, {
+        name: 'Ram',
+        batch: 7,
+        marks: {
+          science: 35,
+          social: 24,
+          hindi: 22,
+          maths: 95,
+          english: 67,
+        }
+      }, {
+        name: 'Shyam',
+        batch: 9,
+        marks: {
+          science: 45,
+          social: 87,
+          hindi: 65,
+          maths: 78,
+          english: 99,
+        }
+      }
+    ]
+
+		/* Q - Return array of students with following details:
+			- name
+			- batch
+			- average marks secured
+		*/
+
+		// Method 1
+		// let studentsUpdatedDetails = []
+
+		// students.forEach(student => {
+		// 	let sum = 0
+		// 	Object.values(student.marks).forEach(marks => sum = sum + marks)
+		// 	let averageMarks = sum / 5
+
+		// 	studentsUpdatedDetails.push({
+		// 		name: student.name,
+		// 		batch: student.batch,
+		// 		averageMarks
+		// 	})
+		// })
+
+		// Method 2
+		// let studentsUpdatedDetails = students.map(student => {
+		// 	let sum = 0
+		// 	Object.values(student.marks).forEach(marks => sum = sum + marks)
+		// 	let averageMarks = sum / 5
+
+		// 	return {
+		// 		name: student.name,
+		// 		batch: student.batch,
+		// 		averageMarks
+		// 	}
+		// })
+
+		// Method 3
+		// let studentsUpdatedDetails = students.map(student => {
+		// 	let averageMarks = Object.values(student.marks).reduce((total, marks) => total + marks) / 5
+
+		// 	return {
+		// 		name: student.name,
+		// 		batch: student.batch,
+		// 		averageMarks
+		// 	}
+		// })
+
+		// let studentsUpdatedDetails = students.map(student => 
+		// 	({
+		// 		name: student.name,
+		// 		batch: student.batch,
+		// 		averageMarks: Object.values(student.marks).reduce((total, marks) => total + marks) / 5
+		// 	})
+		// )
+
+		// console.log(studentsUpdatedDetails)
+
+		/* ------------------------------------------------ */
+		// let arr = [5, 2, 3, 10, 8]
+		// let productOfAllElements = arr.reduce((totalProduct, element) => {
+		// 	console.log(totalProduct, element)
+		// 	return totalProduct * element
+		// }, 1)
+		// console.log(productOfAllElements)
+
+
+		/* ------------------------------------------------ */
+		/* Q - Return array of only those students who have an average marks > 75 with following details:
+			- name
+			- batch
+			- average marks secured
+		*/
+
+		let studentsUpdatedDetails = students.map(student => 
+			({
+				name: student.name,
+				batch: student.batch,
+				averageMarks: Object.values(student.marks).reduce((total, marks) => total + marks) / 5
+			})
+		).filter(student => student.averageMarks > 75)
+
+		console.log(studentsUpdatedDetails)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

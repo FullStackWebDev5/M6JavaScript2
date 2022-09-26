@@ -1,0 +1,13 @@
+#signup-form {
+	width: 800px;
+	margin: 20px auto;
+}
+
+#login-form {
+	width: 700px;
+	margin: 20px auto;
+}
+
+#signup-form, #login-form {
+	display: none;
+}

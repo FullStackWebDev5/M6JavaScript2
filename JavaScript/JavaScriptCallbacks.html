@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Callbacks</title>
+	<script>
+		/* 
+			Higher Order Functions:
+			- Functions which accept another function definition as an argument (Callback)
+			- Functions which return another function/ have nested functions (Closures)
+		*/
+
+		// Callback syntax
+		// func1(function () {
+		// 	console.log('abc')
+		// })
+
+		// API which took 8s to return a response
+		// setTimeout(function () {
+		// 	console.log('Data fetched successfully!');
+		// }, 8000)
+
+
+		function fetchStudentsInformation(callback) {
+			setTimeout(function () {
+				console.log('Data fetched successfully!');
+				callback();
+			}, 8000)
+		}
+
+		console.log('START')
+		fetchStudentsInformation(function() {
+			console.log('END')
+		})
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
