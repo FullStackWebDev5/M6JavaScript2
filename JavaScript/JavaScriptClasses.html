@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Classes</title>
+	<script>
+		/*
+			JS Classes: Template/ Blueprint for objects
+		*/
+
+		/* constructor: Default method of a class which gets invoked during the creation of object */
+
+		// class Student {
+		// 	constructor (firstName, lastName) {
+		// 		this.firstName = firstName
+		// 		this.lastName = lastName
+		// 	}
+
+		// 	// Methods
+		// 	// 1. Getter
+		// 	getFirstName () {
+		// 		return this.firstName
+		// 	}
+		// 	getFullName () {
+		// 		return `${this.firstName} ${this.lastName}`
+		// 	}
+
+		// 	// 2. Setter
+		// 	setLastName (updatedLastName) {
+		// 		this.lastName = updatedLastName
+		// 	}
+		// 	setCountry () {
+		// 		this.country = 'India'
+		// 	}
+		// }
+
+		// let akash = new Student('Akash', 'Sinha')
+		// console.log(akash.getFullName())
+
+		// let rambali = new Student('Rambali', 'Lodhi')
+		// console.log(rambali.getFullName())
+		// rambali.setLastName('Singh')
+		// rambali.setCountry()
+		// console.log(rambali)
+
+
+		// Parent: 'Last Name', 'DNA'
+		// Child: 'Last Name', 'DNA', 'First Name', 'Age', 'Class'
+
+
+
+		// Person - Parent
+
+		class Person {
+			constructor (firstName, lastName) {
+				this.firstName = firstName
+				this.lastName = lastName
+			}
+
+			getFullName () {
+				return `${this.firstName} ${this.lastName}`
+			}
+		}
+
+		// Student - Child
+		class Student extends Person {
+			constructor (firstName, lastName, college) {
+				super(firstName, lastName)
+				this.college = college
+			}
+		}
+
+		const zehra = new Student('Zehra', 'Khan', 'Accio')
+		console.log(zehra.getFullName())
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
