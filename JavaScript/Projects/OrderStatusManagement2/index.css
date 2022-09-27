@@ -17,6 +17,9 @@
 .order-status-wrapper .card-header {
 	background-color: #006491;
 	color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .order-status-wrapper .card-footer {
@@ -39,4 +42,14 @@
 
 .order-status-wrapper .card-footer {
 	border-radius: 0 0 20px 20px;
+}
+
+.cancel-btn:hover {
+	cursor: pointer;
+}
+
+#order-alert {
+	position: absolute;
+  right: 30px;
+	display: none;
 }
