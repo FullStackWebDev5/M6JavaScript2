@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Hoisting, Closures</title>
+	<script>
+		/* Hoisting: 
+    - JS will hoist all the declarations to the top of that block (***)
+    - This is applicable to all variable declarations made by var, let or const
+    - Identifiers declared using let or const are also hoisted, but you cannot access those before intialization - (Temporal Dead Zone)
+    */
+
+		// console.log(x)
+		// var x
+
+		// abc()
+		// function abc() {
+		// 	console.log('abc')
+		// }
+
+		/*
+			JavaScript Closures: Inner function continues to have access to outer scope (Lexical scope) variables even after the outer scope has finished
+		*/
+
+		// function abc() {
+		// 	let x = 5
+
+		// 	function def() {
+		// 		console.log(x)
+		// 	}
+
+		// 	def()
+		// }
+		// abc()
+
+		function abc() {
+			let x = 5
+
+			return function () {
+				console.log(x)
+			}
+		}
+
+		let def = abc()
+		def()
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
