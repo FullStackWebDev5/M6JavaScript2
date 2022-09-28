@@ -25,7 +25,14 @@ const createOrderCard = (orderId) => {
 	cardTextP.innerHTML = `Large Pizza - ${Math.ceil(Math.random()*3)} Nos<br>Medium Pizza - ${Math.ceil(Math.random()*3)} Nos`
 	orderStatusSpan.innerText = 'Order placed'
 	orderStatusSpan.id = orderId
-	cardFooterDiv.innerText = '23-09-2022 09:47:36 PM'
+	cardFooterDiv.innerText = new Date().toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+		hour: "2-digit",
+		minute: "2-digit",
+		second: "2-digit"
+  });
 
 	cancelButtonI.addEventListener('click', () => {
 		colDiv.style.display = 'none'

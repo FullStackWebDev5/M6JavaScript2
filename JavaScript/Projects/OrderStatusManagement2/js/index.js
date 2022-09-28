@@ -1,6 +1,9 @@
+let numberOfOrders = 0
+
 const manageOrder = () => {
-	let orderId = document.getElementById('order-id-input').value
-	document.getElementById('order-id-input').value = ''
+	numberOfOrders++
+	let todaysDate = new Date()
+	let orderId = `MP${todaysDate.getFullYear()}${todaysDate.getMonth() + 1}${todaysDate.getDate()}0000${numberOfOrders}`
 
 	createOrderCard(orderId)
 
